@@ -24,12 +24,12 @@ void insertion_sort_list(listint_t **list)
 				ptr->next->prev = tmp;
 			ptr->next = tmp;
 			ptr->prev = tmp->prev;
-			tmp->prev = ptr;
 
 			if (!ptr->prev)
 				*list = ptr;
 			else
 				ptr->prev->next = ptr;
+			tmp->prev = ptr;
 			print_list(*list);
 		}
 		ptr = ptr->next;
